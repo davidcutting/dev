@@ -1,0 +1,10 @@
+{
+    "name": "Development Environment",
+	"build": {
+		"dockerfile": "docker/cpp-test/Dockerfile"
+	},
+	"extensions": [
+		"ms-vscode.cpptools"
+	],
+	"remoteUser": "dcutting"
+}
