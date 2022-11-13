@@ -1,7 +1,7 @@
 {
     "name": "Development Environment",
 	"build": {
-		"dockerfile": "docker/cpp-test/Dockerfile"
+		"dockerfile": "Dockerfile"
 	},
 	"extensions": [
 		"ms-vscode.cpptools"
