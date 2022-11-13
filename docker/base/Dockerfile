@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y locales tzdata && \
 ENV LANG en_US.UTF-8
 
 ######################
-from base as base-dev
+FROM base as base-dev
 
 # Install base development environment packages
 RUN apt-get update && apt-get install -y \
@@ -25,3 +25,18 @@ RUN apt-get update && apt-get install -y \
     vim \
     wget \
     sudo
+
+# Set up user
+ARG USERNAME=dev
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
+# Create a non-root user
+RUN groupadd --gid $USER_GID $USERNAME && \
+    useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME && \
+    echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME && \
+    chmod 0440 /etc/sudoers.d/$USERNAME && \
+    rm -rf /var/lib/apt/lists/* && \
+    echo "source /usr/share/bash-completion/completions/git" >> /home/$USERNAME/.bashrc
+
+ENV DEBIAN_FRONTEND=
