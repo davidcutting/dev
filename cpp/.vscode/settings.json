@@ -1,4 +1,6 @@
 {
+    "C_Cpp.intelliSenseEngine": "Disabled",
+    "clangd.path": "/usr/bin/clangd-14",
     "files.associations": {
         "chrono": "cpp",
         "array": "cpp",

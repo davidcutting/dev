@@ -4,7 +4,10 @@
 		"dockerfile": "Dockerfile"
 	},
 	"extensions": [
-		"ms-vscode.cpptools"
+		"vscjava.vscode-java-pack",
+		"github.copilot",
+		"logerfo.open-all-files",
+		"analytic-signal.preview-pdf"
 	],
 	"remoteUser": "dev"
 }
