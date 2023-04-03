@@ -8,7 +8,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     clangd-14 \
     clang-format-14 \
     clang-tidy-14 \
-    clang-tools-14
+    clang-tools-14 \
     lld \
     lldb \
     llvm \
