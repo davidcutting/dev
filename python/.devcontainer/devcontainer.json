@@ -1,0 +1,13 @@
+{
+	"name": "python-dev",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"extensions": [
+		"ms-python.python",
+		"ms-python.vscode-pylance",
+		"donjayamanne.python-extension-pack",
+		"ms-azuretools.vscode-docker"
+	],
+	"remoteUser": "dev"
+}
