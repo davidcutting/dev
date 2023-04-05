@@ -13,6 +13,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     lldb \
     llvm \
     gdb \
+    gcovr \
+    libgtest-dev \
     cppcheck \
     valgrind \
     ninja-build \
