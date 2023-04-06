@@ -85,3 +85,49 @@ jobs:
           labels: ${{ steps.meta-cpp-dev.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      # java-dev
+      
+      # Extract metadata (tags, labels) for Docker
+      # https://github.com/docker/metadata-action
+      - name: Extract Docker metadata
+        id: meta-java-dev
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_BASE }}/java-dev
+
+      # Build and push Docker image with Buildx (don't push on PR)
+      # https://github.com/docker/build-push-action
+      - name: Build and push base Docker image
+        id: build-and-push-java-dev
+        uses: docker/build-push-action@v4
+        with:
+          context: ./docker/java-dev
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta-java-dev.outputs.tags }}
+          labels: ${{ steps.meta-java-dev.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      # python-dev
+      
+      # Extract metadata (tags, labels) for Docker
+      # https://github.com/docker/metadata-action
+      - name: Extract Docker metadata
+        id: meta-python-dev
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_BASE }}/python-dev
+
+      # Build and push Docker image with Buildx (don't push on PR)
+      # https://github.com/docker/build-push-action
+      - name: Build and push base Docker image
+        id: build-and-push-python-dev
+        uses: docker/build-push-action@v4
+        with:
+          context: ./docker/python-dev
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta-python-dev.outputs.tags }}
+          labels: ${{ steps.meta-python-dev.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
