@@ -1,4 +1,4 @@
-from base-dev as cpp-dev
+FROM base-dev as cpp-dev
 
 # Install base cpp development packages
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
