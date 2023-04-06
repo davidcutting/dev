@@ -1,4 +1,4 @@
-FROM base-dev as python-dev
+FROM ghcr.io/davidcutting/base-dev:master as python-dev
 
 # Install base python development packages
 RUN apt-get update && apt-get install -y \

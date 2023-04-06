@@ -1,4 +1,4 @@
-FROM base-dev as cpp-dev
+FROM ghcr.io/davidcutting/base-dev:master as cpp-dev
 
 # Install base cpp development packages
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
