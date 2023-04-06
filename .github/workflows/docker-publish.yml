@@ -58,8 +58,8 @@ jobs:
         with:
           context: ./docker/base-dev
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta-base-dev.outputs.tags }}
+          labels: ${{ steps.meta-base-dev.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
           
@@ -81,7 +81,7 @@ jobs:
         with:
           context: ./docker/cpp-dev
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta-cpp-dev.outputs.tags }}
+          labels: ${{ steps.meta-cpp-dev.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
