@@ -22,3 +22,5 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     meson \
     pkg-config \
     && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+
+RUN update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-14 100
