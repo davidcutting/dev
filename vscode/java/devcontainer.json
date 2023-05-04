@@ -1,13 +1,15 @@
 {
-    "name": "Development Environment",
-	"build": {
-		"dockerfile": "Dockerfile"
+    "name": "java-dev",
+	"image": "ghcr.io/davidcutting/java-dev:master",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"vscjava.vscode-java-pack",
+				"github.copilot",
+				"logerfo.open-all-files",
+				"analytic-signal.preview-pdf"
+			]
+		}
 	},
-	"extensions": [
-		"vscjava.vscode-java-pack",
-		"github.copilot",
-		"logerfo.open-all-files",
-		"analytic-signal.preview-pdf"
-	],
 	"remoteUser": "dev"
 }

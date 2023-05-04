@@ -75,7 +75,7 @@ jobs:
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
-      - name: Build and push base Docker image
+      - name: Build and push cpp-dev Docker image
         id: build-and-push-cpp-dev
         uses: docker/build-push-action@v4
         with:
@@ -98,7 +98,7 @@ jobs:
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
-      - name: Build and push base Docker image
+      - name: Build and push java-dev Docker image
         id: build-and-push-java-dev
         uses: docker/build-push-action@v4
         with:
@@ -121,7 +121,7 @@ jobs:
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
-      - name: Build and push base Docker image
+      - name: Build and push python-dev Docker image
         id: build-and-push-python-dev
         uses: docker/build-push-action@v4
         with:
@@ -144,7 +144,7 @@ jobs:
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
-      - name: Build and push base Docker image
+      - name: Build and push rust-dev Docker image
         id: build-and-push-rust-dev
         uses: docker/build-push-action@v4
         with:

@@ -23,6 +23,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     git \
     vim \
+    curl \
     wget \
     sudo
 

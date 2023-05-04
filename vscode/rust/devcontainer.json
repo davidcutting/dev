@@ -1,0 +1,12 @@
+{
+    "name": "rust-dev",
+	"image": "ghcr.io/davidcutting/rust-dev:master",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"rust-lang.rust-analyzer"
+			]
+		}
+	},
+	"remoteUser": "dev"
+}

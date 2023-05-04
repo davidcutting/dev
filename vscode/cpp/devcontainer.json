@@ -1,12 +1,14 @@
 {
     "name": "cpp-dev",
-	"build": {
-		"dockerfile": "Dockerfile"
+	"image": "ghcr.io/davidcutting/cpp-dev:master",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools",
+				"llvm-vs-code-extensions.vscode-clangd",
+				"ms-azuretools.vscode-docker"
+			]
+		}
 	},
-	"extensions": [
-		"ms-vscode.cpptools",
-		"llvm-vs-code-extensions.vscode-clangd",
-		"ms-azuretools.vscode-docker"
-	],
 	"remoteUser": "dev"
 }
