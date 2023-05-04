@@ -131,3 +131,26 @@ jobs:
           labels: ${{ steps.meta-python-dev.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      # rust-dev
+      
+      # Extract metadata (tags, labels) for Docker
+      # https://github.com/docker/metadata-action
+      - name: Extract Docker metadata
+        id: meta-rust-dev
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_BASE }}/rust-dev
+
+      # Build and push Docker image with Buildx (don't push on PR)
+      # https://github.com/docker/build-push-action
+      - name: Build and push base Docker image
+        id: build-and-push-rust-dev
+        uses: docker/build-push-action@v4
+        with:
+          context: ./docker/rust-dev
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta-rust-dev.outputs.tags }}
+          labels: ${{ steps.meta-rust-dev.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
