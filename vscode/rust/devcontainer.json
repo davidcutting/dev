@@ -1,6 +1,6 @@
 {
     "name": "rust-dev",
-	"image": "ghcr.io/davidcutting/rust-dev:master",
+	"image": "rust:latest",
 	"customizations": {
 		"vscode": {
 			"extensions": [
